@@ -2,13 +2,13 @@
 
 ## About
 
-Multi-sig contract suitable for use in wallets. 
+Multi-sig contract suitable for use in wallets.
 
 Some of the features of the contract (WalletSimple.sol)
 
 1. Functions as a 2-of-3 multisig wallet for sending transactions.
 2. Support for synchronous (single transaction) approvals containing multiple signatures through the use of ecrecover.
-3. Can deploy Forwarder contracts so that a single wallet can have multiple receive addresses. 
+3. Can deploy Forwarder contracts so that a single wallet can have multiple receive addresses.
 4. Forwarder address contracts have the ability to flush funds that were sent to the address before the contract was created.
 5. ERC20 tokens can be flushed from the forwarder wallet to the main wallet with a single signature from any signer.
 6. ERC20 tokens and ether can be sent out from the main wallet through a multisig process.
@@ -31,15 +31,24 @@ This installs truffle and an Ethereum test RPC client.
 
 Find it at [contracts/WalletSimple.sol](contracts/WalletSimple.sol)
 
+## Usign Infura to Connect to kovan network
+
+You need to create an account in https://infura.io , a project also and config a local file .env with INFURA_API_KEY and MNENOMIC of your kovan wallet like This
+
+```
+INFURA_API_KEY=******************
+MNENOMIC=***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+```
+
 ## Running tests
 
-The truffle framework will depend on the Web3 interface to a local Web3 Ethereum JSON-RPC. If you've followed the above steps, run the following to start testrpc. 
+The truffle framework will depend on the Web3 interface to a local Web3 Ethereum JSON-RPC. If you've followed the above steps, run the following to start testrpc.
 
 ```shell
 npm run truffle-testrpc
 ```
 
-You should verify that you are not already running geth, as this will cause the tests to run against that interface. 
+You should verify that you are not already running geth, as this will cause the tests to run against that interface.
 
 In a **separate terminal window**, run the following command to initiate the test suite, which will run against the RPC:
 
