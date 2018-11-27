@@ -8,3 +8,5 @@ coverage
 *.swp
 .node-xml*
 contracts/test*
+
+\.env
